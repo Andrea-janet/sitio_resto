@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar plato</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header id="header2" class="bg-dark text-white text-center py-5">
+    </header>
+
+    <main>
+        <div class="container vw-100" id="app">
+            <h2 class="p-4 text-center">Editar plato</h2>
+
+            <form class="text-center m-5">
+
+                <div class="mb-4">
+                    <label for="nombre">Nombre</label><br>
+                    <input class="rounded-1 border-0 col-12 col-md-6" type="text" name="nombre" id="nombre" v-model="nombre">
+                </div>
+                <div class="mb-4">
+                    <label for="desc">Descripción</label><br>
+                    <input class="rounded-1 border-0 col-12 col-md-6" type="text" name="desc" id="desc" v-model="descripcion">
+                </div>
+                <div class="mb-4">
+                    <label for="precio">Precio</label><br>
+                    <input class="rounded-1 border-0 col-12 col-md-6" type="number" name="precio" id="precio" v-model="precio">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="foto">Link a la imágen</label><br>
+                    <input class="rounded-1 border-0 col-12 col-md-6" type="text" name="foto" id="foto" v-model="foto">
+                </div>
+                <div class="mb-4">
+                    <img class="foto-plato" :src="foto" alt="">
+                </div>
+                <button type="button" class="btn btn-success" v-on:click="editar()">Grabar</button>
+            </form>
+        </div>
+
+
+    </main>
+
+
+    <footer id="footer" class="bg-dark text-white text-center py-3">
+    </footer>
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/bc81495391.js" crossorigin="anonymous"></script>
+    <!-- Vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- JS -->
+    <script src="../js/main.js"></script>
+    <script src="../js/editar_plato.js"></script>
+</body>
+
+</html>

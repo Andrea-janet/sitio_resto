@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra carta</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header id="header2" class="bg-dark text-white text-center py-5">
+    </header>
+
+    <main>
+        <div class="text-center mb-5 m-auto w-75">
+            <h3 class="h1">Nuestra carta</h3>
+            <p class=""> Mirá nuestra carta de platos y preparate para elegir!</p>
+        </div>
+
+        <div id="app" class="container">
+            <h2 class="text-center ms-4 me-4 mb-4 p-4 ">Carta de platos</h2>
+            <div v-if="error">
+                <p><span>Error</span> al cargar. Intentelo más tarde.</p>
+            </div>
+            <div v-else>
+                <div class="contenedor-tarjetas">
+                    <div class="text-center mb-5" v-for="plato in carta">
+                        <h3>{{plato.nombre}}</h3>
+                        <p>{{plato.descripcion}}</p>
+                        <div>
+                            <img class="foto-plato" v-bind:src="plato.foto" :alt="plato.nombre">
+                        </div>
+                        <p class="precio">${{plato.precio}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer id="footer" class="bg-dark text-white text-center py-3">
+    </footer>
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/bc81495391.js" crossorigin="anonymous"></script>
+    <!-- Vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- JS -->
+    <script src="../js/main.js"></script>
+    <script src="../js/carta.js"></script>
+</body>
+
+</html>
